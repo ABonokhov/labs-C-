@@ -1,0 +1,64 @@
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+
+namespace lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            A obj = new A();
+            Console.WriteLine(obj.C);
+            B obj2 = new B();
+            Console.WriteLine(obj2.d);
+        }
+    }
+    class A
+    {
+        public int a = 4;
+        public int b = 2;
+
+        public int C
+        {
+            get { return a / (b - a); }
+            set { a = value; b = value; }
+        }
+        public A()
+        {
+            a = 8;
+            b = 4;
+        }
+        public A(int a, int b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    class B : A
+    {
+        public int d;
+        public int c2
+        {
+            get { return b / a - d; }
+            set { a = value; b = value; d = value; }
+        }
+        public B()
+        {
+            a = 8;
+            b = 24;
+            d = 2;
+        }
+        public B (int a, int b, int d):base(a, b)
+            {
+                this.d = d;
+            }
+    }
+}
