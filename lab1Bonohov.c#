@@ -7,32 +7,26 @@ Write your code in this editor and press "Run" button to execute it.
 *******************************************************************************/
 
 using System;
-class Programm  
+
+namespace Lab1
 {
-    static void Main(string[] args)
+    class Program
     {
-        A obj = new A();
-        Console.WriteLine (obj.Operation("++"));
-        Console.ReadKey();
+        static void Main(string[] args)
+        {
+            A classA = new A();
+            Console.WriteLine(classA.c);
+        }
     }
-}
     class A
     {
-        private int a = 4;
+        private int a = 2;
         private int b = 2;
         public int c
         {
-            get { return a-b;}
+            get
+            {return a /= (a + b);}
+            set{ a = value;}
         }
-      public int Operation (string str)
-      {
-          switch (str)
-          { 
-              case "*=": return a=a*b;
-              case "-": return a-b;
-              case "++": return a++;
-          }
-          return 0;
-  }
+    }
 }
-
